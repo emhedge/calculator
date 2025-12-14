@@ -44,8 +44,7 @@ function operate(num1, operator, num2) {
         return operators["*"](num1Int, num2Int)
     } else if (operator === "/") {
         return operators["/"](num1Int, num2Int)
-    } else return "ERROR";
-    
+    } 
     
 }
 
@@ -114,17 +113,18 @@ buttons.addEventListener("click", (event) => {
     displayText.textContent = num1 + operator + num2
 
     if (target.className == "solve") {
-        let solution = operate(num1, operator, num2);
-        displayText.textContent = solution;
-        num1 = solution;
-        num2 = "";
+        if (operator == "" && num2 == "") {
+            displayText.textContent = num1
+        } else if (num2 == "") {
+            displayText.textContent = num1 + operator
+        } else {
+            let solution = operate(num1, operator, num2);
+            displayText.textContent = solution;
+            num1 = solution;
+            num2 = "";
+        }
     }
-    
-
-    }
-    
-    // ${operator} ${num2}
-)
+})
 
 
 
