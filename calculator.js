@@ -23,10 +23,10 @@ display.appendChild(displayText);
 
 // operator functions
 const operators = {
-    "+": (a, b) => a + b,
-    "-": (a, b) => a - b,
-    "*": (a, b) => a * b,
-    "/": (a, b) => a / b,
+    "+": (a, b) => parseFloat((a + b).toFixed(8)),
+    "-": (a, b) => parseFloat((a - b).toFixed(8)),
+    "*": (a, b) => parseFloat((a * b).toFixed(8)),
+    "/": (a, b) => parseFloat((a / b).toFixed(8)),
 }
 
 const functions = {
@@ -45,6 +45,13 @@ const functions = {
         num2 = "";
         operator = "";
         displayText.textContent = "";
+    },
+    "decimal": function() {
+        if (operator == "") {
+            num1 += ".";
+        } else {
+            num2 += ".";
+        }
     }
 }
 
@@ -122,6 +129,13 @@ buttons.addEventListener("click", (event) => {
             num2 += digit;
         }
     } 
+
+    // decimal logic
+        if (target.id == "decimal") {
+        functions["decimal"]();
+    }
+
+    // operator
     if (target.className == "operator") {
         // if no operator, set operator to operator button pressed
         if (operator == "") operator = target.textContent;
@@ -157,6 +171,8 @@ buttons.addEventListener("click", (event) => {
     if (target.id == "allClear") {
         functions["allClear"]();
     }
+
+
 })
 
 
