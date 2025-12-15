@@ -27,6 +27,7 @@ const operators = {
     "-": (a, b) => parseFloat((a - b).toFixed(8)),
     "*": (a, b) => parseFloat((a * b).toFixed(8)),
     "/": (a, b) => parseFloat((a / b).toFixed(8)),
+    "%": (a, b) => parseFloat((a % b).toFixed(8))
 }
 
 const functions = {
@@ -48,31 +49,25 @@ const functions = {
     },
     "decimal": function() {
         if (operator == "") {
-            num1 += ".";
+            if (!num1.includes(".") && num1 == "") {
+                num1 += "0.";
+            } else if (!num1.includes(".")) {
+                num1 += ".";
+              }
         } else {
-            num2 += ".";
+            if (!num2.includes(".") && num2 == "") {
+                num2 += "0.";
+            } else if (!num2.includes(".")) {
+                num2 += ".";
+              }
         }
-    }
+    },
+    "posOrNeg": function() {
+        if (operator == "") {
+            num1 *= -1;
+        } else num2 *= -1
+    },
 }
-
-// const sum = function(arr) {return arr.reduce(((acc, obj) => acc + obj), 0)}
-
-// const power = (a, b) => a ** b;
-
-// function factorial(a) {
-// // prevent negatives
-//   if (a < 0) return "ERROR";
-// // work with 0 and 1
-//   if (a === 0 || a === 1) return 1;
-// // work with numbers > 1
-//   if (a > 1) {
-//     let result = 1;
-//     for (let i = a; i > 1; i--) {
-//     result *= i
-//     } 
-//   return result
-//   }
-// }
 
 // init declaration of numbers and operator
 let num1 = "";
@@ -96,6 +91,8 @@ function operate(num1, operator, num2) {
         return "";
     } else if (operator === "/") {
         return operators["/"](num1Int, num2Int)
+    } else if (operator === "%") {
+        return operators["%"](num1Int, num2Int)
     } 
     
 }
@@ -131,8 +128,13 @@ buttons.addEventListener("click", (event) => {
     } 
 
     // decimal logic
-        if (target.id == "decimal") {
+    if (target.id == "decimal") {
         functions["decimal"]();
+    }
+
+    // posOrNeg logic
+    if (target.id == "posOrNeg") {
+        functions["posOrNeg"]();
     }
 
     // operator
