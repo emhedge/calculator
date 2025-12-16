@@ -33,7 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: 851.11px;
+    height: 100%;
     background-color: black;
     width: 25px;
 }
@@ -60,13 +60,17 @@ div#display {
     flex: 1;
     justify-content: right;
     font-size: 62pt;
+    width: auto;
     border-style: solid;
     border-color: black;
     border-width: 1px;
     height: 110px;
     background-color:rgb(164, 164, 164);
     margin-top: 50px;
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px 20px;
 }
 
 div#display p {
