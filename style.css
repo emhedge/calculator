@@ -87,6 +87,7 @@ button {
     width: 150px;
     background-color: black;
     color: white;
+    border-radius: 80px 80px;
 }
 
 .row {
