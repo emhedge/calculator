@@ -29,43 +29,77 @@ body {
     flex: 1;
 }
 
-#rubberGripLeft {
+#rubber-grip-left {
     display: flex;
     flex-direction: column;
     flex: 1;
     background-color: black;
     width: 25px;
-    height: 850px;
+    height: 870px;
     border-top-left-radius: 80px 80px;
     border-bottom-left-radius: 80px 80px;
 
 }
 
-#rubberGripRight {
+#rubber-grip-right {
     display: flex;
     flex-direction: column;
     flex: 1;
     background-color: black;
     width: 25px;
-    height: 850px;
+    height: 875px;
     border-top-right-radius: 80px 80px;
     border-bottom-right-radius: 80px 80px;
 }
 
-.rubberGripTop, .rubberGripBottom {
+.rubber-grip-top, .rubber-grip-bottom {
     height: 10%;
 }
 
-.rubberGripMid {
+.rubber-grip-mid {
     height: 80%;
 }
 
+#flip-top-div {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: right;
+    height: 25px;
+    padding-top: 25px;
+}
 
-#calcMiddle {
+#flip-top-button {
+    align-items: center;
+    display: block;
+    line-height: 0;
+    font-size: 1;
+    margin: 0 45px 30px 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    width: min-content;
+}
+
+.open {
+    background-image: url("./images/flip-top-open.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.closed {
+    background-image: url("./images/flip-top-closed.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#calc-middle {
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: 850px;
+    height: 875px;
     background-color: rgb(176, 2, 2);
 
 }
@@ -82,7 +116,7 @@ div#display {
     height: 110px;
     background-color:rgb(164, 164, 164);
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 20px 20px;

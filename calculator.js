@@ -1,14 +1,14 @@
 // button variables
-const numZero = document.querySelector("#numZero");
-const numOne = document.querySelector("#numOne");
-const numTwo = document.querySelector("#numTwo");
-const numThree = document.querySelector("#numThree");
-const numFour = document.querySelector("#numFour");
-const numFive = document.querySelector("#numFive");
-const numSix = document.querySelector("#numSix");
-const numSeven = document.querySelector("#numSeven");
-const numEight = document.querySelector("#numEight");
-const numNine = document.querySelector("#numNine");
+const numZero = document.querySelector("#num-zero");
+const numOne = document.querySelector("#num-one");
+const numTwo = document.querySelector("#num-two");
+const numThree = document.querySelector("#num-three");
+const numFour = document.querySelector("#num-four");
+const numFive = document.querySelector("#num-five");
+const numSix = document.querySelector("#num-six");
+const numSeven = document.querySelector("#num-seven");
+const numEight = document.querySelector("#num-eight");
+const numNine = document.querySelector("#num-nine");
 const plus = document.querySelector("#plus");
 const minus = document.querySelector("#minus");
 const quotient = document.querySelector("#quotient");
@@ -16,9 +16,10 @@ const product = document.querySelector("#product");
 const remainder = document.querySelector("#remainder");
 const equals = document.querySelector("#equals");
 const backspace = document.querySelector("#backspace");
-const allClear = document.querySelector("#allClear");
+const allClear = document.querySelector("#all-clear");
 const decimal = document.querySelector("#decimal");
-
+const flipTopButton = document.querySelector("#flip-top-button");
+flipTopButton.classList.toggle(".closed");
 
 // update display function
 const display = document.querySelector("div#display");
@@ -127,7 +128,7 @@ buttons.addEventListener("click", (event) => {
     }
 
     // posOrNeg logic
-    if (target.id == "posOrNeg") {
+    if (target.id == "pos-or-neg") {
         functions["posOrNeg"]();
     }
 
@@ -164,7 +165,7 @@ buttons.addEventListener("click", (event) => {
         functions["backspace"]();
     }
 
-    if (target.id == "allClear") {
+    if (target.id == "all-clear") {
         functions["allClear"]();
     }
 })
