@@ -123,6 +123,24 @@ flipTopButton.addEventListener("click", () => {
         : "./images/flip-top-closed.png";
 })
 
+// display font size adjustment based on text length
+const MAX_LENGTH = 13;
+const MIN_FONT_SIZE = 24;
+const MAX_FONT_SIZE = 62;
+
+function updateFontSize() {
+    const text = num1 + operator + num2;
+    displayText.textContent = text;
+
+    if (text.length > MAX_LENGTH) {
+        let newFontSize = MAX_FONT_SIZE - (text.length - MAX_LENGTH) * 6;
+        if (newFontSize < MIN_FONT_SIZE) newFontSize = MIN_FONT_SIZE;
+        displayText.style.fontSize = newFontSize + "pt";
+    } else {
+        displayText.style.fontSize = MAX_FONT_SIZE + "pt";
+    }
+}
+
 
 // button event handlers for various numbers/operators
 const buttons = document.querySelector("#buttons");
@@ -198,63 +216,83 @@ document.addEventListener('keydown', function(event) {
     switch (event.key) {
         case '0':
             numZero.click();
+            updateFontSize();
             break;
         case '1':
             numOne.click();
+            updateFontSize();
             break;
         case '2':
             numTwo.click();
+            updateFontSize();
             break;
         case '3':
             numThree.click();
+            updateFontSize();
             break;
         case '4':
             numFour.click();
+            updateFontSize();
             break;
         case '5':
             numFive.click();
+            updateFontSize();
             break;
         case '6':
             numSix.click();
+            updateFontSize();
             break;
         case '7':
             numSeven.click();
+            updateFontSize();
             break;
         case '8':
             numEight.click();
+            updateFontSize();
             break;
         case '9':
             numNine.click();
+            updateFontSize();
             break;
         case '+':
             plus.click();
+            updateFontSize();
             break;
         case '-':
             minus.click();
+            updateFontSize();
             break;
         case '*':
             product.click();
+            updateFontSize();
             break;
         case '/':
             quotient.click();
+            updateFontSize();
             break;
         case '%':
             remainder.click();
+            updateFontSize();
             break;
         case '=':
             equals.click();
+            updateFontSize();
             break;
         case 'Enter':
             equals.click();
+            updateFontSize();
             break;
         case 'Backspace':
             backspace.click();
+            updateFontSize();
             break;
         case 'Delete':
             allClear.click();
+            updateFontSize();
             break;
         case '.':
             decimal.click();
+            updateFontSize();
             break;
         default:
             break;
