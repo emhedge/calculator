@@ -124,13 +124,19 @@ div#display {
 }
 
 @keyframes coverOpening {
-    from {height: 105%; opacity: 1;}
-    to {height: 0%; opacity: 0;}
+    /* from {height: 105%; opacity: 1;}
+    to {height: 0%; opacity: 0;} */
+    0% {height: 105%; opacity: 1;}
+    99% {height: 1%; opacity: 1;}
+    100% {height: 0%; opacity: 0;}
 }
 
 @keyframes coverClosing {
-    from {height: 0%; opacity: 0;}
-    to {height: 105%; opacity: 1;}
+    /* from {height: 0%; opacity: 0;}
+    to {height: 105%; opacity: 1;} */
+    0% {height: 0%; opacity: 0;}
+    1% {height: 1%; opacity: 1;}
+    100% {height: 105%; opacity: 1;}
 }
 
 div#display-cover {
