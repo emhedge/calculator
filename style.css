@@ -124,19 +124,25 @@ div#display {
 }
 
 @keyframes coverOpening {
-    /* from {height: 105%; opacity: 1;}
-    to {height: 0%; opacity: 0;} */
     0% {height: 105%; opacity: 1;}
     99% {height: 1%; opacity: 1;}
     100% {height: 0%; opacity: 0;}
 }
 
 @keyframes coverClosing {
-    /* from {height: 0%; opacity: 0;}
-    to {height: 105%; opacity: 1;} */
     0% {height: 0%; opacity: 0;}
     1% {height: 1%; opacity: 1;}
     100% {height: 105%; opacity: 1;}
+}
+
+@keyframes textSlideUp {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-120px); }
+}
+
+@keyframes textSlideDown {
+    from { transform: translateY(-120px); }
+    to   { transform: translateY(0); }
 }
 
 div#display-cover {
@@ -152,14 +158,17 @@ div#display-cover {
     border-bottom-left-radius: 20px;
     opacity: 1;
     z-index: 1;
+    overflow: hidden;
 }
 
 #display-cover p {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     flex: 1;
+    justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 0;
+    height: 100%;
     font-family: cursive;
     font-size: 34pt;
 }
@@ -175,6 +184,15 @@ div#display-cover.animate.opened {
     pointer-events: auto;
     animation: 2s linear coverOpening forwards;
 }
+
+div#display-cover.animate.closed p {
+    animation: textSlideDown 1.8s linear forwards;
+}
+
+div#display-cover.animate.opened p {
+    animation: textSlideUp 1.8s linear forwards;
+}
+
 
 div#display p {
     margin: 10px 10px;
