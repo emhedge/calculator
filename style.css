@@ -104,7 +104,7 @@ body {
     margin: auto;
 }
 
-#display, #display-cover {
+#display, #display-cover, #display-slot {
     box-sizing: border-box;
 }
 
@@ -120,7 +120,7 @@ div#display {
     align-items: center;
     justify-content: right;
     /* font-size: 62pt; */
-    z-index: 0;
+    z-index: 1;
 }
 
 @keyframes coverOpening {
@@ -157,7 +157,23 @@ div#display-cover {
     border-bottom-right-radius: 20px;   
     border-bottom-left-radius: 20px;
     opacity: 1;
-    z-index: 1;
+    z-index: 2;
+    overflow: hidden;
+}
+
+div#display-slot {
+    position: absolute;
+    top: 0;
+    left: -1%;
+    right: -1%;
+    height: 105%;
+    background-color: ; 
+    pointer-events: none;  
+    border: 1px solid black;
+    border-bottom-right-radius: 20px;   
+    border-bottom-left-radius: 20px;
+    opacity: 1;
+    z-index: 0;
     overflow: hidden;
 }
 
